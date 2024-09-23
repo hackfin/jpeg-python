@@ -166,7 +166,7 @@ class JpegDecoder(object):
         matrix = np.array([[1.0, 0.0, 1.40200],
                            [1.0, -0.34414, -0.71414],
                            [1.0, 1.77200, 0.0]])
-        ycbcr = np.array(ycbcr, dtype=np.float)
+        ycbcr = np.array(ycbcr, dtype=float)
         ycbcr[:, :, 1:] -= 128
         rgb = np.dot(ycbcr, matrix.T)
         rgb = np.clip(rgb, a_min=0, a_max=255)
